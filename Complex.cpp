@@ -1,24 +1,6 @@
 #include "Complex.h"
 #include <cmath>
 
-Complex::Complex(reT re, imT im)
-{
-    this->kart.im = im;
-    this->kart.re = re;
-
-    sPolar polar = kartToPolar(this->kart);
-    this->polar = polar;
-}
-
-Complex::Complex(betragT betrag, winkelT winkel)
-{
-    this->polar.betrag = betrag;
-    this->polar.winkel = winkel;
-
-    sKart kart = polarToKart(this->polar);
-    this->kart = kart;
-}
-
 sKart Complex::getKart()
 {
     return this->kart;

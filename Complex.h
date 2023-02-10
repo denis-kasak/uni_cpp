@@ -1,30 +1,25 @@
 #pragma once
-typedef double winkelT;
-typedef double betragT;
-typedef float imT;
-typedef float reT;
-
-struct sPolar {
-	winkelT winkel;
-	betragT betrag;
+struct sPolar
+{
+	float winkel;
+	float betrag;
 };
 
-struct sKart {
-	imT im;
-	reT re;
+struct sKart
+{
+	float im;
+	float re;
 };
 
-class Complex {
+class Complex
+{
 private:
 	sKart kart;
 	sPolar polar;
 	sPolar kartToPolar(sKart kart);
 	sKart polarToKart(sPolar polar);
-	
-public:
-	Complex(reT re, imT im);
-	Complex(betragT betrag, winkelT winkel);
 
+public:
 	sKart getKart();
 	void set(sKart kart);
 

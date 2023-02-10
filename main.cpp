@@ -4,13 +4,18 @@ using namespace std;
 
 int main()
 {
-	bool stop = false;
+	Ui zahl;
 
-	reT re = 5;
-	imT im = 2;
+	float reell = 4;
+	float imag = 2;
 
-	Ui zahl = Ui(re, im);
-	
+	zahl.set(reell, imag);
+	zahl.printZahl(0);
+
+	double betrag = 4.472136;
+	double winkel = 0.463648;
+
+	zahl.set(betrag, winkel);
 	zahl.printZahl(0);
 
 
