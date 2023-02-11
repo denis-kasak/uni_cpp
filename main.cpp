@@ -4,19 +4,19 @@ using namespace std;
 
 int main()
 {
-	Ui zahl;
+	Ui ui_zahl;
 
 	float reell = 4;
 	float imag = 2;
 
-	zahl.set(reell, imag);
-	zahl.printZahl(0);
+	ui_zahl.set(reell, imag);
+	ui_zahl.printZahl(0);
 
-	double betrag = 4.472136;
-	double winkel = 0.463648;
+	double betrag = 2;
+	double winkel = 1.6;
 
-	zahl.set(betrag, winkel);
-	zahl.printZahl(0);
+	ui_zahl.set(betrag, winkel);
+	ui_zahl.printZahl(0);
 
 
 	return 0;

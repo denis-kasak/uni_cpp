@@ -11,15 +11,25 @@ struct sKart
 	float re;
 };
 
-class Complex
+class Complex //Model
 {
 private:
+	//daten
 	sKart kart;
 	sPolar polar;
+
+	//alternativ variablen so speichern
+	/* float im;
+	float re;
+	float winkel;
+	float betrag; */
+
+	//hilfsfunktionen
 	sPolar kartToPolar(sKart kart);
 	sKart polarToKart(sPolar polar);
 
 public:
+	//getter und setter
 	sKart getKart();
 	void set(sKart kart);
 

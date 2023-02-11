@@ -3,40 +3,40 @@
 #include <iostream>
 using namespace std;
 
-void Ui::set(float re, float im){
-	sKart kart = zahl.getKart();
+void Ui::set(float re, float im){//kartesische Form
+	sKart kart;
 	kart.re=re;
 	kart.im=im;
 	zahl.set(kart);
 }
 
 void Ui::setRe(float re){
-	sKart kart = zahl.getKart();
+	sKart kart;
 	kart.re=re;
 	zahl.set(kart);
 }
 
 void Ui::setIm(float im){
-	sKart kart = zahl.getKart();
+	sKart kart;
 	kart.im=im;
 	zahl.set(kart);
 }
 
-void Ui::set(double betrag, double winkel){
-	sPolar polar = zahl.getPolar();
+void Ui::set(double betrag, double winkel){//polarform
+	sPolar polar;
 	polar.betrag = betrag;
 	polar.winkel = winkel;
 	zahl.set(polar);
 }
 
 void Ui::setBetrag(float betrag){
-	sPolar polar = zahl.getPolar();
+	sPolar polar;
 	polar.betrag = betrag;
 	zahl.set(polar);
 }
 
 void Ui::setWinkel(float winkel){
-	sPolar polar = zahl.getPolar();
+	sPolar polar;
 	polar.winkel = winkel;
 	zahl.set(polar);
 }
