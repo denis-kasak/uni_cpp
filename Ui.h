@@ -6,11 +6,11 @@ private:
 	Complex zahl;
 
 public:
-	void set(float re, float im);
+	void setKart(float re, float im);
 	void setRe(float re);
 	void setIm(float im);
 
-	void set(double betrag, double winkel);
+	void setPolar(float betrag, float winkel);
 	void setBetrag(float betrag);
 	void setWinkel(float winkel);
 

@@ -1,23 +1,26 @@
-#include "Ui.h"
-#include <iostream>
-using namespace std;
+#include ""
 
 int main()
 {
-	Ui ui_zahl;
+	Ui ui;
 
-	float reell = 4;
-	float imag = 2;
+	ui.setKart(4, 2);
+	ui.printZahl(0);
 
-	ui_zahl.set(reell, imag);
-	ui_zahl.printZahl(0);
+	ui.setRe(3);
+	ui.printZahl(0);
 
-	double betrag = 2;
-	double winkel = 1.6;
+	ui.setIm(5);
+	ui.printZahl(0);
 
-	ui_zahl.set(betrag, winkel);
-	ui_zahl.printZahl(0);
+	ui.setPolar(5, 45);
+	ui.printZahl(0);
 
+	ui.setBetrag(3);
+	ui.printZahl(0);
+
+	ui.setWinkel(90);
+	ui.printZahl(0);
 
 	return 0;
 }

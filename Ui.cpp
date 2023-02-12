@@ -3,52 +3,48 @@
 #include <iostream>
 using namespace std;
 
-void Ui::set(float re, float im){//kartesische Form
-	sKart kart;
-	kart.re=re;
-	kart.im=im;
-	zahl.set(kart);
+void Ui::setKart(float re, float im){//kartesische Form
+	zahl.setKart(re, im);
 }
 
 void Ui::setRe(float re){
-	sKart kart;
-	kart.re=re;
-	zahl.set(kart);
+	float im, reOld;
+	zahl.getKart(reOld, im);
+	zahl.setKart(re, im);
 }
 
 void Ui::setIm(float im){
-	sKart kart;
-	kart.im=im;
-	zahl.set(kart);
+	float imOld, re;
+	zahl.getKart(re, imOld);
+	zahl.setKart(re, im);
 }
 
-void Ui::set(double betrag, double winkel){//polarform
-	sPolar polar;
-	polar.betrag = betrag;
-	polar.winkel = winkel;
-	zahl.set(polar);
+void Ui::setPolar(float betrag, float winkel){//polarform
+	zahl.setPolar(betrag, winkel);
 }
 
 void Ui::setBetrag(float betrag){
-	sPolar polar;
-	polar.betrag = betrag;
-	zahl.set(polar);
+	float betragOld, winkel;
+	zahl.getPolar(betragOld, winkel);
+	zahl.setPolar(betrag, winkel);
 }
 
 void Ui::setWinkel(float winkel){
-	sPolar polar;
-	polar.winkel = winkel;
-	zahl.set(polar);
+	float betrag,  winkelOld;
+	zahl.getPolar(betrag, winkelOld);
+	zahl.setPolar(betrag, winkel);
 }
 
 
 void Ui::printZahl(int mode)
-{
-	sKart kart = zahl.getKart();
-	string strkart = "Kartesische Form: z= " + to_string(kart.re) + " + " + "i" + to_string(kart.im);
+{	
+	float re, im;
+	zahl.getKart(re, im);
+	string strkart = "Kartesische Form: z= " + to_string(re) + " + " + "i" + to_string(im);
 
-	sPolar polar = zahl.getPolar();
-	string strpolar = "Polarform: z= " + to_string(polar.betrag) + " (cos(" + to_string(polar.winkel) + ") + i sin(" + to_string(polar.winkel) + ") )";
+	float betrag, winkel;
+	zahl.getPolar(betrag, winkel);
+	string strpolar = "Polarform: z= " + to_string(betrag) + " (cos(" + to_string(winkel) + ") + i sin(" + to_string(winkel) + ") )";
 
 	switch (mode)
 	{

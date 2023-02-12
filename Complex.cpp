@@ -1,41 +1,48 @@
 #include "Complex.h"
 #include <cmath>
 
-sKart Complex::getKart()
+void Complex::getKart(float& re, float& im)
 {
-    return this->kart;
+    re = this->re;
+    im = this->im;
 }
 
-void Complex::set(sKart kart)
+void Complex::setKart(float re, float im)
 {
-    this->kart = kart;
-    this->polar = kartToPolar(kart);
+    this->re = re;
+    this->im = im;
+
+    float betrag, winkel;
+    kartToPolar(re, im, betrag, winkel);
+    this->betrag = betrag;
+    this->winkel = winkel;
 }
 
-sPolar Complex::getPolar()
+void Complex::getPolar(float& betrag, float& winkel)
 {
-    return this->polar;
+    betrag = this->betrag;
+    winkel = this->winkel;
 }
 
-void Complex::set(sPolar polar)
+void Complex::setPolar(float betrag, float winkel)
 {
-    this->polar = polar;
-    this->kart = polarToKart(polar);
+    this->betrag = betrag;
+    this->winkel = winkel;
+
+    float re, im;
+    polarToKart(re, im, betrag, winkel);
+    this->re = re;
+    this->im = im;
 }
 
-sPolar Complex::kartToPolar(sKart kart)
+void Complex::kartToPolar(float re, float im, float& betrag, float& winkel)
 {
-    sPolar polar;
-    polar.betrag = sqrt(kart.re * kart.re + kart.im * kart.im);
-    polar.winkel = atan2(kart.im, kart.re);
-
-    return polar;
+    betrag = sqrt(re * re + im * im);
+    winkel = atan2(im, re);
 }
 
-sKart Complex::polarToKart(sPolar polar)
+void Complex::polarToKart(float& re, float& im, float betrag, float winkel)
 {
-    sKart kart;
-    kart.re = polar.betrag * cos(polar.winkel);
-    kart.im = polar.betrag * sin(polar.winkel);
-    return kart;
+    re = betrag * cos(winkel);
+    im = betrag * sin(winkel);
 }

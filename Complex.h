@@ -1,38 +1,19 @@
 #pragma once
-struct sPolar
-{
-	float winkel;
-	float betrag;
-};
-
-struct sKart
-{
-	float im;
-	float re;
-};
-
 class Complex //Model
 {
 private:
 	//daten
-	sKart kart;
-	sPolar polar;
-
-	//alternativ variablen so speichern
-	/* float im;
-	float re;
-	float winkel;
-	float betrag; */
+	float re, im, betrag, winkel;
 
 	//hilfsfunktionen
-	sPolar kartToPolar(sKart kart);
-	sKart polarToKart(sPolar polar);
+	void kartToPolar(float re, float im, float &betrag, float &winkel);
+	void polarToKart(float &re, float &im, float betrag, float winkel);
 
 public:
 	//getter und setter
-	sKart getKart();
-	void set(sKart kart);
+	void getKart(float &re, float &im);
+	void setKart(float re, float im);
 
-	sPolar getPolar();
-	void set(sPolar polar);
+	void getPolar(float &betrag, float &winkel);
+	void setPolar(float betrag, float winkel);
 };
