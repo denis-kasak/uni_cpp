@@ -121,7 +121,7 @@ Matrix33 Matrix33::operator*(double n)
         mat[2][0], mat[2][1], mat[2][2]);
 }
 
-Matrix33 Matrix33::operator+=(Matrix33 m)
+Matrix33 &Matrix33::operator+=(Matrix33 m)
 {
     double mat[3][3];
 
@@ -133,10 +133,7 @@ Matrix33 Matrix33::operator+=(Matrix33 m)
             mat[i][j] = this->get(i, j);
         }
     }
-    return Matrix33(
-        mat[0][0], mat[0][1], mat[0][2],
-        mat[1][0], mat[1][1], mat[1][2],
-        mat[2][0], mat[2][1], mat[2][2]);
+    return *this;
 }
 
 Matrix33::operator double()

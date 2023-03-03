@@ -18,11 +18,11 @@ public:
     double &get(int row, int col);
 
     std::string toString() const;
-
     Matrix33 operator+(Matrix33 m);
     Matrix33 operator*(Matrix33 m);
     Matrix33 operator*(double n);
-    Matrix33 operator+=(Matrix33 m);
+    Matrix33 &operator+=(Matrix33 m);
+    friend Matrix33 operator*(double, Matrix33);
     operator double();
 
 private:

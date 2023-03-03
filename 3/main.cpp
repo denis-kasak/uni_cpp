@@ -8,8 +8,6 @@ lassen Sie die Markierungen, wo welche Aufgabe beginnt im Quellcode!
 
 Hinweis: Bitte geben Sie nur die Quelldateien ohne das Visual Studio Projekt ab!
 */
-Matrix33 operator*(double, Matrix33);
-
 int main()
 {
 
