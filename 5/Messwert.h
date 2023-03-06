@@ -6,7 +6,7 @@ class Messwert
 {
     public:
     Time t;
-    virtual std::string toString(){return "";};
+    virtual std::string toString()=0;
 
     protected:
     Messwert(int time):t(time){};

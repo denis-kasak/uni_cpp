@@ -209,9 +209,7 @@ Temp *getTemp(int time, vector<Temp *> vecT)
 
 bool compareTime(Messwert *mp1, Messwert *mp2)
 {
-    Messwert m1 = *mp1;
-    Messwert m2 = *mp2;
-    return m1.t.get() < m2.t.get();
+    return mp1->t.get() < mp2->t.get();
 }
 
 void addBlitz(int t, vector<Messwert *> &vecM)
